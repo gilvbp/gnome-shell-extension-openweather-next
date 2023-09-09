@@ -1,5 +1,5 @@
 /*
-   This file is part of OpenWeather (gnome-shell-extension-openweather).
+   This file is part of OpenWeather (gnome-shell-extension-openweather-next).
 
    OpenWeather is free software: you can redistribute it and/or modify it under the terms of
    the GNU General Public License as published by the Free Software Foundation, either
@@ -12,15 +12,17 @@
    You should have received a copy of the GNU General Public License along with OpenWeather.
    If not, see <https://www.gnu.org/licenses/>.
 
-   Copyright 2022 Jason Oickle
+   Copyright 2023 Gil Vicente Pinto
 */
 
-const { Soup, GLib } = imports.gi;
+import Soup from 'gi://Soup';
+import GLib from 'gi://GLib';
+import Gettext from 'gettext';
+
 const ByteArray = imports.byteArray;
-const ExtensionUtils = imports.misc.extensionUtils;
-const Me = ExtensionUtils.getCurrentExtension();
-const Gettext = imports.gettext.domain(Me.metadata['gettext-domain']);
-const _ = Gettext.gettext;
+
+const _ = Gettext.domain('system-monitor').gettext;
+
 
 // Map OpenWeatherMap icon codes to icon names
 const IconMap = {
